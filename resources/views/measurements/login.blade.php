@@ -13,11 +13,11 @@
       <form action="#">
         <div class="title">Login</div>
         <div class="input-box underline">
-          <input type="email" placeholder="Digite seu e-mail" required>
+          <input class="email" type="email" placeholder="Digite seu e-mail" required>
           <div class="underline"></div>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="Digite sua senha" required>
+          <input class="password" type="password" placeholder="Digite sua senha" required>
           <div class="underline"></div>
         </div>
         <div class="input-box button">

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap%27');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap%27');
 *{
+  color: #fff;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -21,7 +22,7 @@ form{
     height: 500px;
 }
 .container{
-  background: #fff;
+  background: #131313;
   max-width: 350px;
   width: 100%;
   padding: 25px 30px;
@@ -45,12 +46,14 @@ form{
   background: linear-gradient(to right, #131313 0%, #4767a3 100%);
 }
 .container form .input-box{
+  background-color: #131313;
   width: 100%;
   height: 45px;
   margin-top: 40px;
   position: relative;
 }
 .container form .input-box input{
+  background-color: #131313;
   width: 100%;
   height: 100%;
   outline: none;
@@ -58,6 +61,7 @@ form{
   border: none;
 }
 .container form .underline::before{
+  background-color: #131313;
   content: '';
   position: absolute;
   height: 2px;
@@ -67,6 +71,7 @@ form{
   bottom: 0;
 }
 .container form .underline::after{
+  background-color: #131313;
   content: '';
   position: absolute;
   height: 2px;
@@ -88,7 +93,7 @@ form{
 
 }
 .container .input-box input[type="submit"]{
-  background: linear-gradient(to right, #131313 0%, #4767a3 100%);
+  background:#131313;
   font-size: 17px;
   color: #fff;
   border-radius: 5px;
@@ -97,7 +102,7 @@ form{
 }
 .container .input-box input[type="submit"]:hover{
   letter-spacing: 1px;
-  background: linear-gradient(to left, #131313 0%, #4767a3 100%);
+  background: #4767a3;
 }
 .container .option{
   font-size: 14px;
