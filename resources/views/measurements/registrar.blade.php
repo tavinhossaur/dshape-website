@@ -17,15 +17,15 @@
             <div class="underline"></div>
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Digite sua senha" required>
+            <input type="email" placeholder="Digite seu e-mail" required>
             <div class="underline"></div>
           </div>
         <div class="input-box underline">
-          <input type="email" placeholder="Digite seu e-mail" required>
+          <input type="password" placeholder="Digite sua senha" required>
           <div class="underline"></div>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="Digite sua senha" required>
+          <input type="password" placeholder="Confirme a sua senha" required>
           <div class="underline"></div>
         </div>
         <div class="input-box button">
