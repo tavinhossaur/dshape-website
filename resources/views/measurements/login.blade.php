@@ -11,6 +11,7 @@
 <div class="container">
 
       <form action="#">
+        <a href="/">Voltar para tela inicial</a>
         <div class="title">Login</div>
         <div class="input-box underline">
           <input class="email" type="email" placeholder="Digite seu e-mail" required>
@@ -26,7 +27,7 @@
       </form>
 
         <div class="option">
-            Ainda não tem cadastro? <a href="/registrar">Cadastre-se</a>
+            Ainda não tem cadastro? <a href="/register">Cadastre-se</a>
         </div>
 </div>
 </body>

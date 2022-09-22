@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap%27');
 *{
   color: #fff;
+  background-color: #131313;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,6 +23,7 @@ html, body{
 form{
     height: 400px;
 }
+
 .container{
   background: #131313;
   max-width: 350px;

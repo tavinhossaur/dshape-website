@@ -1,6 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <!-- Required metatags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}" >
     <link rel="stylesheet" href="/css/styles.css">
 
-    <title>DShape - Site para avaliação fisica</title>
-  </head>
-  <body>
-    
+    <title>Dshape - Home</title>
+</head>
+<body>
+
     <!-- Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-1" id="mainNav">
         <div class="container px-4 px-lg-5">
@@ -23,18 +23,11 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/register">Cadastre-se</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/measurements">Lista de medições</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/measurements/new">Criar novo formulário de medição</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    
-    @yield('container')
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="{{ asset('/js/scripts.bundle.min.js') }}"></script>
-
-  </body>
-</html>
+</body>

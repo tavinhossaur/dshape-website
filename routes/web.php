@@ -18,22 +18,23 @@ Route::get('/', function () {
     return view('measurements/landing');
 });
 
-Route::get('/measurements', [MeasurementsController::class,'index']);
-
-Route::get('/measurements/new', function () {
-    return view('measurements/form');
-});
-
-Route::get('/main', function () {
-    return view('measurements/landing');
-});
-
 Route::get('/login', function () {
     return view('measurements/login');
 });
 
-Route::get('/registrar', function () {
+
+Route::get('/register', function () {
     return view('measurements/registrar');
+});
+
+Route::get('/home', function () {
+    return view('measurements/home');
+});
+
+Route::get('/measurements', [MeasurementsController::class,'index']);
+
+Route::get('/measurements/new', function () {
+    return view('measurements/form');
 });
 
 // Rota que salva no banco de dados uma nova medida

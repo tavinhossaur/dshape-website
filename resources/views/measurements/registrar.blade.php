@@ -10,6 +10,7 @@
 <body>
 <div class="container">
       <form action="#">
+        <a href="/">Voltar para tela inicial</a>
         <div class="title">Cadastrar-se</div>
         <div class="input-box underline">
             <input type="type" placeholder="Digite seu nome" required>
