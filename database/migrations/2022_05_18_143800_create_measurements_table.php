@@ -28,6 +28,8 @@ return new class extends Migration
             $table -> double('right_thigh');
             $table -> double('left_calf');
             $table -> double('right_calf');
+            $table -> unsignedBigInteger('user_id');
+            $table -> foreign('user_id') ->references('id')->on('users');
             $table -> timestamps();
         });
     }

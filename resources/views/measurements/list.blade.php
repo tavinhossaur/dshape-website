@@ -1,10 +1,33 @@
-@extends('./layouts/main')
-
-@section('container')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Lista</title>
+</head>
+<body>
+  
+</body>
+</html>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-1" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand text-white">Seja bem-vindo(a), {{auth()->user()->name}}</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/measurements/new">Criar novo formulário de medição</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Sair da conta</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
   <div class="container">
     <div class="row">
       <div class="col-12 my-3">
-        <a href="/">Voltar</a>
+        <br><br>
+        <a class="btn btn-dark" href="/measurements/home">Voltar</a>
       </div>
       <div class="col-12">
         <div class="card">
@@ -67,7 +90,6 @@
         </div>
         <div class="modal-body">
           Deseja excluir essa medida?
-          <p id="meu-paragrafo"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -87,18 +109,12 @@
 
     //adiciona um evento, toda vez que o modal for aberto
     confirmationModal.addEventListener('show.bs.modal', function (event) {
-
       //variável que recebe o botão que acionou o modal
       const button = event.relatedTarget
-
       //variável que recebe o formulário do modal
       const form = document.getElementById('formDeleteMeasurements');
-
       //Alterando o Action(rota) do formulário
       form.action = "/measurements/" + button.getAttribute('data-measurement-id');
-
     });
 
   </script>
-
-@endsection

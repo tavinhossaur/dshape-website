@@ -2,84 +2,97 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Measurements;
 use Illuminate\Http\Request;
+use App\Models\Measurements;
+use Illuminate\Support\Facades\Auth;
 
 class MeasurementsController extends Controller
 {
-    public function index(){
-        $measurements = Measurements::all();
-        return view('measurements/list', ['measurements' => $measurements]);
-    }
+  public function index(){
+    $measurements = Measurements::where('user_id',Auth::user()->id)->get();
+    return view('/measurements/list',
+           ['measurements' => $measurements]);
+  }
 
-    public function store(Request $request){
-        // Criando um objeto
-        $measurements = new Measurements();
+  public function store(Request $request){
+    //criando o objeto Medidas
+    $measurements = new Measurements();
 
-        // Alterando os atributos do objeto
-        $measurements -> date = $request -> date;
-        $measurements -> weight = $request -> weight;
-        $measurements -> height = $request -> height;
-        $measurements -> chest = $request -> chest;
-        $measurements -> left_arm = $request -> left_arm;
-        $measurements -> right_arm = $request -> right_arm;
-        $measurements -> abdomen = $request -> abdomen;
-        $measurements -> waist = $request -> waist;
-        $measurements -> hips = $request -> hips;
-        $measurements -> left_thigh = $request -> left_thigh;
-        $measurements -> right_thigh = $request -> right_thigh;
-        $measurements -> left_calf = $request -> left_calf;
-        $measurements -> right_calf = $request -> right_calf;
+    //alterando os atributos do objeto
+    $measurements->date = $request->date;
+    $measurements->weight = $request->weight;
+    $measurements->height = $request->height;
+    $measurements->chest = $request->chest;
+    $measurements->left_arm = $request->left_arm;
+    $measurements->right_arm = $request->right_arm;
+    $measurements->abdomen = $request->abdomen;
+    $measurements->waist = $request->waist;
+    $measurements->hips = $request->hips;
+    $measurements->left_thigh = $request->left_thigh;
+    $measurements->right_thigh = $request->right_thigh;
+    $measurements->left_calf = $request->left_calf;
+    $measurements->right_calf = $request->right_calf;
+    $measurements->user_id = Auth::user()->id;
 
-        // Salvando no banco de dados
-        $measurements -> save();
+    //Encaminhar para salvar no banco de dados
+    $measurements->save();
 
-        // Redirecionar para a página de medidas
-        // Apenas para atualizar a tela
-        return redirect('/measurements');
-    }
-    // Fim do método store
+    //Redirecionar para a página que lista as medidas
+    return redirect('/measurements/list');
+  }
 
-    public function destroy($id){
-        $measurements = Measurements::findOrFail($id);
-        $measurements -> delete();
+  public function destroy($id){
 
-        //Redirecionar para a página de medidas apenas para atualizar a tela
-        return redirect('/measurements');
-    }// Fim do método destroy
+    //Retornar a medida do banco de dados
+    $measurement = Measurements::findOrFail($id);
 
-    public function update(Request $request, $id){
-        // Buscar medida que será alterada
-        $measurement = Measurements::findOrFail($id);
-       
-        $measurement -> date = $request -> date;
-        $measurement -> weight = $request -> weight;
-        $measurement -> height = $request -> height;
-        $measurement -> chest = $request -> chest;
-        $measurement -> left_arm = $request -> left_arm;
-        $measurement -> right_arm = $request -> right_arm;
-        $measurement -> abdomen = $request -> abdomen;
-        $measurement -> waist = $request -> waist;
-        $measurement -> hips = $request -> hips;
-        $measurement -> left_thigh = $request -> left_thigh;
-        $measurement -> right_thigh = $request -> right_thigh;
-        $measurement -> left_calf = $request -> left_calf;
-        $measurement -> right_calf = $request -> right_calf;
-        // Realizar as alterações
+    //excluir a medida do banco de dados
+    $measurement->delete();
 
-        // Salvar alterações no bando de dados (UPDATE)
-        $measurement -> update();
+    //Redirecionar para a página que
+    //lista as medidas
+    return redirect('/measurements/list');
 
-        // Redireciona para páginda de medidas
-        return redirect('/measurements');
-    }// Fim do método update
+  }//fim do destroy
 
-    public function show($id){
-        // Busca pela medida específica
-        $measurement = Measurements::findOrFail($id);
+  public function update(Request $request, $id){
 
-        // Retorna a view com a medida encontrada
-        return view('measurements/form', ['measurement' => $measurement]);
-    }// Fim do método show
+    // Buscar pela medida que será alterada
+    $measurement = Measurements::findOrFail($id);
 
-}// Fim da classe
+    // Realizar as alterações
+    $measurement->date = $request->date;
+    $measurement->weight = $request->weight;
+    $measurement->height = $request->height;
+    $measurement->chest = $request->chest;
+    $measurement->left_arm = $request->left_arm;
+    $measurement->right_arm = $request->right_arm;
+    $measurement->abdomen = $request->abdomen;
+    $measurement->waist = $request->waist;
+    $measurement->hips = $request->hips;
+    $measurement->left_thigh = $request->left_thigh;
+    $measurement->right_thigh = $request->right_thigh;
+    $measurement->left_calf = $request->left_calf;
+    $measurement->right_calf = $request->right_calf;
+    $measurement->user_id = Auth::user()->id;
+
+    // Salvar as alterações no BD(UPDATE)
+    $measurement->update();
+
+    //Redirecionar para a página que
+    //lista as medidas
+    return redirect('/measurements/list');
+
+  }//fim do update
+
+  public function show($id){
+    //Buscar pela medida
+    $measurement = Measurements::findOrFail($id);
+
+    //retorna a view com a medida encontrada
+    return view('/measurements/form',
+                ['measurement' => $measurement]);
+
+  }//fim do show
+
+}//fim da classe

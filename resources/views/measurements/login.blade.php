@@ -2,32 +2,36 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css%22/%3E
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Dshape - Login</title>
 </head>
 <body>
-<div class="container">
-
-      <form action="#">
+  <div class="container">
+      <form action="/auth" method="post">
+        @csrf
         <a href="/">Voltar para tela inicial</a>
         <div class="title">Login</div>
+          <div class="input-box">
+            <input type="email" name="email" placeholder="Digite seu e-mail" required>
+            <div class="underline"></div>
+          </div>
         <div class="input-box underline">
-          <input class="email" type="email" placeholder="Digite seu e-mail" required>
-          <div class="underline"></div>
-        </div>
-        <div class="input-box">
-          <input class="password" type="password" placeholder="Digite sua senha" required>
+          <input type="password" name="password" placeholder="Digite sua senha" required>
           <div class="underline"></div>
         </div>
         <div class="input-box button">
-          <input type="submit" name="" value="Entrar">
+          <input type="submit" name="" value="Acessar">
         </div>
-      </form>
-
+        @if ($msg = Session::get('erro'))
         <div class="option">
-            Ainda não tem cadastro? <a href="/register">Cadastre-se</a>
+          {{$msg}}
+        </div>
+        @endif
+      </form>
+        <div class="option">
+            Não possui uma conta? <a href="/register">Cadastrar-se</a>
         </div>
 </div>
 </body>

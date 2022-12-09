@@ -10,6 +10,7 @@
 <body>
 <div class="container">
       <form action="#">
+        @csrf
         <a href="/">Voltar para tela inicial</a>
         <div class="title">Cadastrar-se</div>
         <div class="input-box underline">
@@ -29,7 +30,7 @@
           <div class="underline"></div>
         </div>
         <div class="input-box button">
-          <input type="submit" name="" value="Login">
+          <input type="submit" name="" value="Cadastrar">
         </div>
       </form>
 
