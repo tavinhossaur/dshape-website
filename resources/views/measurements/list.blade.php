@@ -80,6 +80,8 @@
   </div> <!-- fim da container -->
 
 
+  <script src="{{ asset('/js/bootstrap.bundle.min.js')}}"></script>
+
   <!-- Modal -->
   <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
